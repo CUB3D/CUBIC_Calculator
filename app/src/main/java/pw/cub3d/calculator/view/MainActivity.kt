@@ -1,5 +1,7 @@
-package pw.cub3d.calculator
+package pw.cub3d.calculator.view
 
+import android.content.Intent
+import android.icu.text.SymbolTable
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import io.requery.Persistable
@@ -8,9 +10,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import org.koin.android.ext.android.inject
+import pw.cub3d.calculator.R
 import pw.cub3d.calculator.calculate.*
 import pw.cub3d.calculator.models.HistoryEntry
 import pw.cub3d.calculator.models.HistoryEntryEntity
+import pw.cub3d.calculator.subscribe
+import pw.cub3d.calculator.unsubscribe
+import pw.cub3d.calculator.view.history.HistoryActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -59,6 +65,10 @@ class MainActivity : AppCompatActivity() {
 
             println("Have ${count.value()} entries")
         }
+
+        calc_openParen.setOnClickListener { equationManager.addSymbol(TokenType.LEFT_PAREN) }
+        calc_closeParen.setOnClickListener { equationManager.addSymbol(TokenType.RIGHT_PAREN) }
+        calc_exp.setOnClickListener { equationManager.addSymbol(TokenType.POWER) }
 
     }
 

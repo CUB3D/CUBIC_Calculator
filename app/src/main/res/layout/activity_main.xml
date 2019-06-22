@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".view.MainActivity">
     <TextView
             android:layout_width="0dp"
             android:layout_height="100dp" android:id="@+id/calc_equation" app:layout_constraintTop_toTopOf="parent"
@@ -23,8 +23,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             android:id="@+id/calc_buttonGrid"
             app:alignmentMode="alignBounds"
-            android:layout_height="0dp" app:layout_constraintTop_toBottomOf="@+id/calc_result"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/divider">
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/divider"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/gridLayout2">
 
         <Button
                 android:text="7"
@@ -35,7 +36,10 @@
                 app:layout_row="0" app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="8"
                 android:layout_width="0dp"
@@ -45,7 +49,10 @@
                 app:layout_row="0" app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="9"
                 android:layout_width="0dp"
@@ -55,7 +62,10 @@
                 app:layout_row="0" app:layout_column="2"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="4"
                 android:layout_width="0dp"
@@ -65,7 +75,10 @@
                 app:layout_row="1" app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="5"
                 android:layout_width="0dp"
@@ -75,7 +88,10 @@
                 app:layout_row="1" app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="6"
                 android:layout_width="0dp"
@@ -85,7 +101,10 @@
                 app:layout_row="1" app:layout_column="2"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="1"
                 android:layout_width="0dp"
@@ -95,7 +114,10 @@
                 app:layout_row="2" app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="2"
                 android:layout_width="0dp"
@@ -105,7 +127,10 @@
                 app:layout_row="2" app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="3"
                 android:layout_width="0dp"
@@ -115,7 +140,10 @@
                 app:layout_row="2" app:layout_column="2"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="."
                 android:layout_width="0dp"
@@ -126,7 +154,10 @@
                 app:layout_row="3" app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="0"
                 android:layout_width="0dp"
@@ -137,7 +168,10 @@
                 app:layout_row="3" app:layout_column="1"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="="
                 android:layout_width="0dp"
@@ -148,7 +182,10 @@
                 app:layout_row="3" app:layout_column="2"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
     </androidx.gridlayout.widget.GridLayout>
     <View
             android:id="@+id/divider"
@@ -156,7 +193,7 @@
             android:layout_height="0dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toStartOf="@+id/gridLayout" android:layout_marginEnd="8dp"
-            app:layout_constraintTop_toTopOf="@+id/calc_buttonGrid"/>
+            app:layout_constraintTop_toTopOf="@+id/calc_buttonGrid" app:layout_constraintBottom_toBottomOf="parent"/>
     <androidx.gridlayout.widget.GridLayout
             android:layout_width="100dp"
             android:layout_height="0dp"
@@ -166,19 +203,18 @@
             app:columnCount="1"
             app:rowCount="5" app:layout_constraintTop_toTopOf="@+id/calc_buttonGrid">
 
-        <Button
-                android:text="x"
+        <ImageButton
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:id="@+id/calc_backspace"
-                style="@android:style/Widget.Material.Button.Borderless"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_row="0" app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="Delete" android:src="@drawable/ic_delete"/>
         <Button
-                android:text="/"
+                android:text="÷"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:id="@+id/calc_divide"
@@ -187,7 +223,10 @@
                 app:layout_row="1" app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="*"
                 android:layout_width="0dp"
@@ -198,7 +237,10 @@
                 app:layout_row="2" app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="-"
                 android:layout_width="0dp"
@@ -209,7 +251,10 @@
                 app:layout_row="3" app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
         <Button
                 android:text="+"
                 android:layout_width="0dp"
@@ -220,7 +265,10 @@
                 app:layout_row="4" app:layout_column="0"
                 app:layout_columnWeight="1"
                 app:layout_rowWeight="1"
-                app:layout_gravity="fill_horizontal|fill_vertical"/>
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_light"/>
     </androidx.gridlayout.widget.GridLayout>
     <TextView
             android:layout_width="0dp"
@@ -231,4 +279,230 @@
             android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:textAlignment="textEnd"
             android:textSize="30sp" android:typeface="sans" android:fontFamily="monospace"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+    <androidx.gridlayout.widget.GridLayout
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/calc_result"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/gridLayout2"
+            app:columnCount="5" app:rowCount="3"
+            android:background="@color/colorPrimary">
+
+        <Button
+                android:text="INV"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_shift"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="0" app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:background="@color/design_default_color_on_primary"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="RAD"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_rad"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="0" app:layout_column="1"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="sin"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_sin"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="0" app:layout_column="2"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="cos"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_cos"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="0" app:layout_column="3"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="tan"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_tan"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="0" app:layout_column="4"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+
+        <Button
+                android:text="%"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_percent"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="1" app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="ln"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_naturalLog"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="1" app:layout_column="1"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="log"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_log"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="1" app:layout_column="2"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="sqrt"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_sqrt"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="1" app:layout_column="3"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="^"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_power"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="1" app:layout_column="4"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+
+        <Button
+                android:text="PI"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_pi"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="2" app:layout_column="0"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="e"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_exp"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="2" app:layout_column="1"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="("
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_openParen"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="2" app:layout_column="2"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text=")"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_closeParen"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="2" app:layout_column="3"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+        <Button
+                android:text="!"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:id="@+id/calc_factorial"
+                style="@android:style/Widget.Material.Button.Borderless"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_row="2" app:layout_column="4"
+                app:layout_columnWeight="1"
+                app:layout_rowWeight="1"
+                app:layout_gravity="fill_horizontal|fill_vertical"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:backgroundTint="@android:color/transparent"
+                android:textColor="@android:color/primary_text_dark"/>
+
+    </androidx.gridlayout.widget.GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

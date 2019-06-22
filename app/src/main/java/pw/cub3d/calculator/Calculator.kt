@@ -11,6 +11,7 @@ import org.koin.core.context.startKoin
 import org.koin.dsl.module
 import pw.cub3d.calculator.calculate.*
 import pw.cub3d.calculator.models.Models
+import pw.cub3d.calculator.models.repos.HistoryEntries
 
 class Calculator: Application() {
 
@@ -23,6 +24,8 @@ class Calculator: Application() {
 
         single { DatabaseSource(get(), Models.DEFAULT, 1) }
         single { KotlinEntityDataStore<Persistable>(get<DatabaseSource>().configuration) }
+
+        single { HistoryEntries(get()) }
     }
 
     override fun onCreate() {

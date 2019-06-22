@@ -12,7 +12,7 @@ enum class TokenType(
 ) {
     NUMBER(true, "", false, false, 1, false),
     MULTIPLY(false, "x", false, true, 3, true),
-    DIVIDE(false, "/", false, true, 3, true),
+    DIVIDE(false, "÷", false, true, 3, true),
     SUBTRACT(false, "-", false, true, 2, true),
     ADD(false, "+", false, true, 2, true),
     POWER(false, "^", false, true, 4, false),
