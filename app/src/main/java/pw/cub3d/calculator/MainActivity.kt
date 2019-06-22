@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onCalculationChange(event: EquationChangeEvent) {
         calc_equation.text = equationFormatter.format(event.equation)
+        calc_result.text = calculationManager.solveEquation(equationManager.equation, rpnEvaluator)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,14 +42,7 @@ class MainActivity : AppCompatActivity() {
         calc_add.setOnClickListener { equationManager.addSymbol(TokenType.ADD) }
 
         calc_equals.setOnClickListener {
-            val rpn = calculationManager.convertEquationToRPN(
-                equationManager.equation
-            ).reversed()
-
-            val rpnStack = Stack<CalculationToken>()
-            rpnStack.addAll(rpn)
-
-            calc_result.text = rpnEvaluator.evaluateRPN(rpnStack).toString()
+            calc_result.text = calculationManager.solveEquation(equationManager.equation, rpnEvaluator)
         }
 
     }

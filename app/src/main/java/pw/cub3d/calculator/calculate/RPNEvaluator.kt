@@ -1,6 +1,7 @@
 package pw.cub3d.calculator.calculate
 
 import java.math.BigDecimal
+import java.math.MathContext
 import java.util.*
 
 class RPNEvaluator {
@@ -25,7 +26,7 @@ class RPNEvaluator {
                     working.push(arg1.subtract(arg2))
                 }
                 if(token.tokenType == TokenType.DIVIDE) {
-                    working.push(arg1.divide(arg2))
+                    working.push(arg1.divide(arg2, MathContext.DECIMAL128))
                 }
             } else {
                 working.push(token.numberValue)

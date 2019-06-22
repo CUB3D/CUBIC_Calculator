@@ -1,8 +1,26 @@
 package pw.cub3d.calculator.calculate
 
+import java.lang.Exception
 import java.util.*
+import java.util.concurrent.ExecutionException
 
 class CalculationManager {
+
+    fun solveEquation(equation: Equation, rpnEvaluator: RPNEvaluator): String {
+        return try {
+            val tmpStack = Stack<CalculationToken>()
+            val rpnEquation = convertEquationToRPN(equation).reversed()
+            tmpStack.addAll(rpnEquation)
+
+            val result = rpnEvaluator.evaluateRPN(tmpStack)
+
+            result.toPlainString()
+        } catch (e: Exception) {
+            e.printStackTrace()
+
+            ""
+        }
+    }
 
     fun convertEquationToRPN(equation: Equation): Stack<CalculationToken> {
         return convertTokensToRPN(equation.tokens.reversed())
