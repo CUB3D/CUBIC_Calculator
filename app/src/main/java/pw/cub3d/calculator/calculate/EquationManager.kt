@@ -18,7 +18,7 @@ class EquationManager {
             if(last.tokenType == type) {
                 if(type.canBeRepeated) {
                     last.value += value
-                    EquationChangeEvent(Equation(tokens)).post()
+                    alertEquationChanged()
                 }
 
                 return
@@ -27,7 +27,7 @@ class EquationManager {
 
         tokens.add(CalculationToken(type, value))
 
-        EquationChangeEvent(Equation(tokens)).post()
+        alertEquationChanged()
     }
 
     fun removeLastSymbol() {
@@ -41,11 +41,28 @@ class EquationManager {
             tokens.remove(tokens.last())
         }
 
-        EquationChangeEvent(Equation(tokens)).post()
+        alertEquationChanged()
     }
 
     fun resetCalculation() {
         tokens.clear()
+        alertEquationChanged()
+    }
+
+    fun addPeriod() {
+        if(tokens.isEmpty())
+            return
+
+        val lastToken = tokens.last()
+
+        if(lastToken.tokenType == TokenType.NUMBER && !lastToken.value.contains(".")) {
+            lastToken.value += "."
+        }
+
+        alertEquationChanged()
+    }
+
+    private fun alertEquationChanged() {
         EquationChangeEvent(Equation(tokens)).post()
     }
 

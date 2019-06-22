@@ -70,6 +70,8 @@ class MainActivity : AppCompatActivity() {
         calc_closeParen.setOnClickListener { equationManager.addSymbol(TokenType.RIGHT_PAREN) }
         calc_exp.setOnClickListener { equationManager.addSymbol(TokenType.POWER) }
 
+        calc_dot.setOnClickListener { equationManager.addPeriod() }
+
     }
 
     override fun onDestroy() {
