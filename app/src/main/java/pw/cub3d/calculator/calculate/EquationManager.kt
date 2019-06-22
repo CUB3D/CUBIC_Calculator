@@ -13,9 +13,6 @@ class EquationManager {
         get() = Equation(tokens)
 
     fun addSymbol(type: TokenType, value: String = type.placeHolderValue) {
-
-        println("Adding $value")
-
         if(tokens.isNotEmpty()) {
             val last = tokens.last()
             if(last.tokenType == type) {

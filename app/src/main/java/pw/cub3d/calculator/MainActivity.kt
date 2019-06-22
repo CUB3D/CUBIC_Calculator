@@ -1,24 +1,29 @@
 package pw.cub3d.calculator
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import io.requery.Persistable
+import io.requery.sql.KotlinEntityDataStore
 import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+import org.koin.android.ext.android.inject
 import pw.cub3d.calculator.calculate.*
-import java.util.*
+import pw.cub3d.calculator.models.HistoryEntry
+import pw.cub3d.calculator.models.HistoryEntryEntity
 
 class MainActivity : AppCompatActivity() {
 
-    private val equationManager = EquationManager()
-    private val equationFormatter = EquationFormatter()
-    private val calculationManager = CalculationManager()
-    private val rpnEvaluator = RPNEvaluator()
+    private val equationManager: EquationManager by inject()
+    private val equationFormatter: EquationFormatter by inject()
+    private val calculationManager: CalculationManager by inject()
+
+    private val db: KotlinEntityDataStore<Persistable> by inject()
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onCalculationChange(event: EquationChangeEvent) {
         calc_equation.text = equationFormatter.format(event.equation)
-        calc_result.text = calculationManager.solveEquation(equationManager.equation, rpnEvaluator)
+        calc_result.text = calculationManager.solveEquation(equationManager.equation)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +47,17 @@ class MainActivity : AppCompatActivity() {
         calc_add.setOnClickListener { equationManager.addSymbol(TokenType.ADD) }
 
         calc_equals.setOnClickListener {
-            calc_result.text = calculationManager.solveEquation(equationManager.equation, rpnEvaluator)
+            calc_result.text = calculationManager.solveEquation(equationManager.equation)
+
+            val historyEntry = HistoryEntryEntity()
+            historyEntry.query = equationFormatter.format(equationManager.equation)
+            historyEntry.answer = calc_result.text.toString()
+
+            db.insert(historyEntry)
+
+            val count = db.count(HistoryEntry::class).get()
+
+            println("Have ${count.value()} entries")
         }
 
     }
