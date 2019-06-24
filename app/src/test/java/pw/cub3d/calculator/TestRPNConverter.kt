@@ -1,16 +1,33 @@
 package pw.cub3d.calculator
 
+import org.junit.After
 import org.junit.Test
 
 import org.junit.Assert.*
+import org.junit.Before
+import org.koin.core.context.startKoin
+import org.koin.dsl.module
+import org.koin.test.AutoCloseKoinTest
+import org.koin.test.KoinTest
+import org.koin.test.inject
 import pw.cub3d.calculator.calculate.*
 
-class TestCalculationManager {
-    val calculationManager = CalculationManager()
+class TestRPNConverter : AutoCloseKoinTest() {
+    private val rpnConverter: RPNConverter by inject()
+
+    @Before
+    fun before() {
+        startKoin {
+            modules(module {
+                single { RPNConverter() }
+            })
+        }
+    }
 
     @Test
     fun testSimple() {
-        val rpn = calculationManager.convertTokensToRPN(listOf(
+
+        val rpn = rpnConverter.convertTokensToRPN(listOf(
             CalculationToken(TokenType.NUMBER, "100"),
             CalculationToken(TokenType.ADD, "+"),
             CalculationToken(TokenType.NUMBER, "50")
@@ -21,7 +38,7 @@ class TestCalculationManager {
 
     @Test
     fun testSimple2() {
-        val rpn = calculationManager.convertTokensToRPN(listOf(
+        val rpn = rpnConverter.convertTokensToRPN(listOf(
             CalculationToken(TokenType.NUMBER, "3"),
             CalculationToken(TokenType.ADD, "+"),
             CalculationToken(TokenType.NUMBER, "4"),
